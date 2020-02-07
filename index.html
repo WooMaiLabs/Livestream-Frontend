@@ -7,34 +7,36 @@
 </head>
 
 <body style="text-align: center;">
-    <h3>OVZ.RIP</h3>
-    <h5>One step ahead of game</h5>
-    <div style="width: 85%;">
-        <div id="dplayer"></div>
-    </div>
+    <center>
+        <h3>OVZ.RIP</h3>
+        <h5>One step ahead of game</h5>
+        <div style="width: 85%;">
+            <div id="dplayer"></div>
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dplayer@1.25.0/dist/DPlayer.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.13.1/dist/hls.min.js"></script>
-    <script src="tools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dplayer@1.25.0/dist/DPlayer.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/hls.js@0.13.1/dist/hls.min.js"></script>
+        <script src="tools.js"></script>
 
-    <script>
-        server = getQueryVariable('server');
-        if (server == 'a') {
-            url = 'https://stream-a.katoyin.live:18081/hls/' + getQueryVariable('stream') + '.m3u8';
-        } else {
-            url = '/OSPF.mp4';
-        }
-
-        const dp = new DPlayer({
-            container: document.getElementById('dplayer'),
-            live: true,
-            autoplay: true,
-            video: {
-                url: url
+        <script>
+            server = getQueryVariable('server');
+            if (server == 'a') {
+                url = 'https://stream-a.katoyin.live:18081/hls/' + getQueryVariable('stream') + '.m3u8';
+            } else {
+                url = '/OSPF.mp4';
             }
-        });
-    </script>
+
+            const dp = new DPlayer({
+                container: document.getElementById('dplayer'),
+                live: true,
+                autoplay: true,
+                video: {
+                    url: url
+                }
+            });
+        </script>
+    </center>
 </body>
 
 </html>
