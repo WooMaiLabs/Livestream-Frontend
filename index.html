@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OVZ.RIP - One step ahead of game</title>
+  <link class="dplayer-css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dplayer/1.25.0/DPlayer.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dplayer/1.25.0/DPlayer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/0.13.1/hls.min.js"></script>
+</head>
+<body>
+  <center>
+    <h3>OVZ.RIP - One step ahead of game</h3>
+    <div style="width: 500px">
+      <div id="dplayer"></div>
+  </div>
+  <script>
+    const dp = new DPlayer({
+            container: document.getElementById('dplayer'),
+        live: true,
+        autoplay: true,
+        video: {
+            url: 'https://stream-a.katoyin.live:18081/hls/katoyin.m3u8',
+            type: 'hls'
+        }
+    });
+    </script>
+</body>
+</html>
