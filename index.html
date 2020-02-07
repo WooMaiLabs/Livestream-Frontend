@@ -13,35 +13,35 @@
         <div style="width: 80%;">
             <div id="dplayer"></div>
         </div>
-
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/dplayer@1.25.0/dist/DPlayer.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/hls.js@0.13.1/dist/hls.min.js"></script>
-        <script src="tools.js"></script>
-
-        <script>
-            server = getQueryVariable('server');
-            if (server == 'a') {
-                $('#subtitle').text(getQueryVariable('stream'));
-                url = 'https://stream-a.katoyin.live:18081/hls/' + getQueryVariable('stream') + '.m3u8';
-            } else if (server == 'b') {
-                $('#subtitle').text(getQueryVariable('stream'));
-                url = 'https://stream-b.katoyin.live:25643/hls/' + getQueryVariable('stream') + '.m3u8';
-            } else {
-                $('#subtitle').text('Route your network with OSPF');
-                url = '/OSPF.mp4';
-            }
-
-            const dp = new DPlayer({
-                container: document.getElementById('dplayer'),
-                live: true,
-                autoplay: true,
-                video: {
-                    url: url
-                }
-            });
-        </script>
     </center>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dplayer@1.25.0/dist/DPlayer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.13.1/dist/hls.min.js"></script>
+    <script src="tools.js"></script>
+
+    <script>
+        server = getQueryVariable('server');
+        if (server == 'a') {
+            $('#subtitle').text(getQueryVariable('stream'));
+            url = 'https://stream-a.katoyin.live:18081/hls/' + getQueryVariable('stream') + '.m3u8';
+        } else if (server == 'b') {
+            $('#subtitle').text(getQueryVariable('stream'));
+            url = 'https://stream-b.katoyin.live:25643/hls/' + getQueryVariable('stream') + '.m3u8';
+        } else {
+            $('#subtitle').text('Route your network with OSPF');
+            url = '/OSPF.mp4';
+        }
+
+        const dp = new DPlayer({
+            container: document.getElementById('dplayer'),
+            live: true,
+            autoplay: true,
+            video: {
+                url: url
+            }
+        });
+    </script>
 </body>
 
 </html>
