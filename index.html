@@ -22,12 +22,21 @@
 
     <script>
         server = getQueryVariable('server');
+        mirror = getQueryVariable('mirror');
         if (server == 'a') {
             $('#subtitle').text(getQueryVariable('stream'));
-            url = 'https://stream-a.katoyin.live:18081/hls/' + getQueryVariable('stream') + '.m3u8';
+
+            if (mirror == false || !isEndpoint(mirror)) {
+                mirror = 'https://stream-a.katoyin.live:18081';
+            }
+            url = mirror + '/hls/' + getQueryVariable('stream') + '.m3u8';
         } else if (server == 'b') {
             $('#subtitle').text(getQueryVariable('stream'));
-            url = 'https://stream-b.katoyin.live:25643/hls/' + getQueryVariable('stream') + '.m3u8';
+
+            if (mirror == false || !isEndpoint(mirror)) {
+                mirror = 'https://stream-b.katoyin.live:25643';
+            }
+            url = mirror + '/hls/' + getQueryVariable('stream') + '.m3u8';
         } else {
             $('#subtitle').text('Route your network with OSPF');
             url = '/OSPF.mp4';
