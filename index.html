@@ -2,15 +2,15 @@
 <html>
 
 <head>
-    <title>OVZ.RIP - One step ahead of game</title>
+    <title>Live Stream | OVZ.RIP</title>
     <link class="dplayer-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer@1.25.0/dist/DPlayer.min.css">
 </head>
 
 <body style="text-align: center;">
     <center>
-        <h3>OVZ.RIP</h3>
-        <h5>One step ahead of game</h5>
-        <div style="width: 80%;">
+        <h3 style="margin-bottom: 8px;">OVZ.RIP</h3>
+        <h5 style="margin-top: 0px; margin-bottom: 8px;" id="subtitle">One step ahead of game</h5>
+        <div style="width: 85%;">
             <div id="dplayer"></div>
         </div>
 
@@ -22,8 +22,10 @@
         <script>
             server = getQueryVariable('server');
             if (server == 'a') {
+                $('#subtitle').text(getQueryVariable('stream'));
                 url = 'https://stream-a.katoyin.live:18081/hls/' + getQueryVariable('stream') + '.m3u8';
             } else {
+                $('#subtitle').text('Route your network with OSPF');
                 url = '/OSPF.mp4';
             }
 
