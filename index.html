@@ -3,6 +3,7 @@
 
 <head>
     <title>Live Stream | OVZ.RIP</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.7.2/dist/sweetalert2.min.css">
     <link class="dplayer-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer@1.25.0/dist/DPlayer.min.css">
 </head>
 
@@ -16,41 +17,11 @@
     </center>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.7.2/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dplayer@1.25.0/dist/DPlayer.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@0.13.1/dist/hls.min.js"></script>
     <script src="tools.js"></script>
-
-    <script>
-        server = getQueryVariable('server');
-        mirror = getQueryVariable('mirror');
-        if (server == 'a') {
-            $('#subtitle').text(getQueryVariable('stream'));
-
-            if (mirror == false || !isEndpoint(mirror)) {
-                mirror = 'https://stream-a.katoyin.live:18081';
-            }
-            url = mirror + '/hls/' + getQueryVariable('stream') + '.m3u8';
-        } else if (server == 'b') {
-            $('#subtitle').text(getQueryVariable('stream'));
-
-            if (mirror == false || !isEndpoint(mirror)) {
-                mirror = 'https://stream-b.katoyin.live:25643';
-            }
-            url = mirror + '/hls/' + getQueryVariable('stream') + '.m3u8';
-        } else {
-            $('#subtitle').text('Route your network with OSPF');
-            url = '/OSPF.mp4';
-        }
-
-        const dp = new DPlayer({
-            container: document.getElementById('dplayer'),
-            live: true,
-            autoplay: true,
-            video: {
-                url: url
-            }
-        });
-    </script>
+    <script src="stream.js"></script>
 </body>
 
 </html>
