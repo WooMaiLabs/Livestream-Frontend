@@ -24,6 +24,9 @@ function init() {
                     });
                     OSPF();
                 } else {
+                    if (result.data.title != null) {
+                        $('#title').text(result.data.title);
+                    }
                     $('#subtitle').text('Streamer: ' + result.data.streamer);
 
                     url = result.data.play_url;
