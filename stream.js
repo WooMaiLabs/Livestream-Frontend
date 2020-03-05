@@ -59,10 +59,10 @@ function init() {
 function OSPF() {
     const dp = new DPlayer({
         container: document.getElementById('dplayer'),
-        live: true,
         autoplay: true,
         video: {
             url: 'OSPF.mp4'
         }
     });
+    $('#subtitle').text('Route your network with OSPF');
 }
