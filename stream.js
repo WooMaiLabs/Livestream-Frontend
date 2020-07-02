@@ -30,6 +30,7 @@ function init() {
                             $('#title').text(result.data.title);
                         }
                         $('#subtitle').text('Streamer: ' + result.data.streamer);
+                        $('#viewers').text('Viewers: ' + result.data.viewers);
 
                         url = result.data.play_url;
                         mirror = getQueryVariable('mirror');
