@@ -11,7 +11,7 @@ function hb() {
         dataType: "json",
         success: function (response) {
             if (response.ret == 0) {
-                $('#viewers').text('Viewers: ' + result.data.viewers);
+                $('#viewers').text('Viewers: ' + response.data.viewers);
             }
         }
     });
