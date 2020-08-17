@@ -1,13 +1,13 @@
 hb();
 
 function hb() {
-    setTimeout(hb, 20000);
+    setTimeout(hb, 5000);
 
     stream = getQueryVariable('stream');
 
     $.ajax({
         type: "POST",
-        url: "https://live.wmapi.net/v1/info/stream/" + stream + "/heartbeat",
+        url: "https://live.wmapi.net/v1/stream/" + stream + "/heartbeat",
         dataType: "json",
         success: function (response) {
             if (response.ret == 0) {

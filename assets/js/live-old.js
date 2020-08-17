@@ -6,7 +6,7 @@ function init() {
     stream = getQueryVariable('stream');
     if (stream != false) {
         $.ajax({
-            url: 'https://live.wmapi.net/v1/info/stream/' + stream,
+            url: 'https://live.wmapi.net/v1/stream/' + stream,
             dataType: 'json',
             success: function (result) {
                 console.log(result);

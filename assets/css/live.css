@@ -1,0 +1,99 @@
+body {
+    background-color: #f7f7f7;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 50px;
+}
+
+.select-none {
+    user-select: none;
+    text-transform: none;
+}
+
+.nowarp {
+    white-space: nowrap;
+}
+
+.user-avatar {
+    height: 18px;
+    width: 18px;
+    border-radius: 0.5rem;
+}
+
+.user-name {
+    color: #999
+}
+
+@media (min-width: 1px) {
+    .container {
+        max-width: 720px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    #chat {
+        height: 600px;
+    }
+
+    .player {
+        width: 100%;
+    }
+
+    .livechat {
+        width: 100%;
+        margin-top: 24px;
+        padding-left: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 860px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 1100px;
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+}
+
+@media (min-width: 1300px) {
+    .container {
+        max-width: 1765px;
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+
+    .player {
+        width: 68%;
+    }
+
+    .livechat {
+        width: 32%;
+        padding-left: 16px;
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 1500px) {
+    #chat {
+        height: 100%;
+    }
+}
+
+#comments {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    line-height: 30px;
+    position: absolute;
+}
+
+#comments::-webkit-scrollbar {
+    display: none;
+}
