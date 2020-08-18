@@ -1,7 +1,7 @@
 hb();
 
 function hb() {
-    setTimeout(hb, 5000);
+    setTimeout(hb, 4500);
 
     stream = getQueryVariable('stream');
 

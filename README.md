@@ -4,7 +4,9 @@ Web frontend for https://live.wmlabs.net
 
 ## Code Quality
 
-![How-to-limit-the-height-of-the-live-chat-div](https://img.trumpdns.com/2020/08/17/gL462XXs.png)
+![How-to-limit-the-height-of-the-live-chat-div](https://img.trumpdns.com/2020/08/18/tjN9lcQt.png)
+
+![How-to-display-live-chat](https://img.trumpdns.com/2020/08/18/6SctjLXI.png)
 
 ![How-to-fix-the-scroll-bar-to-the-bottom](https://img.trumpdns.com/2020/08/17/gaGlfMse.png)
 

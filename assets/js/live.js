@@ -17,6 +17,9 @@ function init() {
                     document.title = response.data.title + ' | Live Stream by WooMai Labs';
                     $('#title').text(response.data.title);
                     $('#streamer').text(response.data.streamer);
+                    setTimeout(() => {
+                        checkStatus();
+                    }, 8000);
 
                     // Load Video
                     console.log('URL: ' + response.data.play_url);
@@ -42,6 +45,9 @@ function init() {
                     });
 
                     $('#send').click(function () {
+                        $('#send').attr('disabled', 'disabled');
+                        $('#send').text('Wait');
+
                         msg = $('#msg').val();
                         $('#msg').val('');
                         $.ajax({
@@ -51,15 +57,26 @@ function init() {
                                 comment: msg
                             },
                             dataType: "json",
+                            xhrFields: {
+                                withCredentials: true
+                            },
                             success: function (response) {
                                 if (response.ret == 0) {
                                     updateComments(true);
+                                    setTimeout(() => {
+                                        $('#send').removeAttr('disabled');
+                                        $('#send').text('Send');
+                                    }, 1000);
                                 } else {
-                                    tata.success('Failed', response.msg);
+                                    tata.warn('Failed', response.msg);
+                                    $('#send').removeAttr('disabled');
+                                    $('#send').text('Send');
                                 }
                             },
                             error: function () {
                                 tata.error('Error', 'Failed to send comment. Please try again');
+                                $('#send').removeAttr('disabled');
+                                $('#send').text('Send');
                             }
                         });
                     });
@@ -103,7 +120,14 @@ function init() {
 
 function chgLivechatHeight() {
     $('#comments').css('height', $('#chat').height() - $('#sendmsg').height() - 38);
-    $('#chat').css('max-height', $('#dplayer').height());
+
+    player_height = $('#dplayer').height();
+    window_width = $(window).width();
+    if (window_width >= 1300) {  // 1 row
+        $('#chat').css('max-height', player_height);
+    } else {  // 2 rows
+        $('#chat').css('max-height', 400);
+    }
 }
 
 var start_time = Math.floor(new Date().getTime() / 1000) - 60;
@@ -144,7 +168,41 @@ function updateComments(single = false) {
     });
 }
 
-// clipboard
+function checkStatus() {
+    $.ajax({
+        type: "GET",
+        url: "https://live.wmapi.net/v1/stream/" + getQueryVariable('stream'),
+        data: {},
+        dataType: "json",
+        success: function (response) {
+            if (response.ret == 0) {
+                if (response.data.status == 'active') {
+                    document.title = response.data.title + ' | Live Stream by WooMai Labs';
+                    $('#title').text(response.data.title);
+                } else if (response.data.status == 'ended') {
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Info',
+                        text: 'Live Stream Ended',
+                        allowOutsideClick: false
+                    }).then(function () {
+                        window.location.reload();
+                    });
+                }
+
+                setTimeout(() => {
+                    checkStatus();
+                }, 8000);
+            } else {
+                tata.error('Error', 'Failed to fetch live info', {
+                    duration: 2000
+                });
+            }
+        }
+    });
+}
+
+// boot
 $(function () {
     init();
 
