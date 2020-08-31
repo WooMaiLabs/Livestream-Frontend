@@ -16,8 +16,8 @@ function pollComments() {
             if (response.ret == 0) {
                 new_dom = '';
                 $.each(response.data, function (i, cmt) {
-                    console.log(cmt);
-                    new_dom += '<div class="row cmt"><div class="col">';
+                    //console.log(cmt);
+                    new_dom += '<div class="row cmt"><div class="col pl-0 pr-0">';
                     //new_dom += '<svg width=30 height=30 data-jdenticon-value="' + cmt.avatar + '">User</svg>';
                     new_dom += '<span class="user-name name-color ml-2 mr-2">' + cmt.name_safe + '</span>';
                     new_dom += '<span class="user-comment text-color">' + cmt.text_safe + '</span>';
@@ -25,6 +25,7 @@ function pollComments() {
                 });
                 $('.comments').html(new_dom);
                 //jdenticon();
+                $(document).scrollTop(1145141919);
             } else {
                 console.log('Poll Error: (' + response.ret + ') ' + response.msg);
             }
