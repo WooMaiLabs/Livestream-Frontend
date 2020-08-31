@@ -164,7 +164,8 @@ function updateComments(single = false) {
                     updateComments();
                 }, 4000);
             }
-        }
+        },
+        complete: function (XHR, TS) { XHR = null }
     });
 }
 
@@ -198,7 +199,8 @@ function checkStatus() {
                     duration: 2000
                 });
             }
-        }
+        },
+        complete: function (XHR, TS) { XHR = null }
     });
 }
 
