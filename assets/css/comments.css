@@ -1,0 +1,17 @@
+.cmt {
+    font-size: 30px;
+    font-weight: 800;
+    -webkit-text-stroke: 1px black;
+}
+
+.user-name {}
+
+.user-comment {}
+
+.name-color {
+    color: #ccc
+}
+
+.text-color {
+    color: #fff
+}
