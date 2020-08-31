@@ -28,7 +28,8 @@ function pollComments() {
             } else {
                 console.log('Poll Error: (' + response.ret + ') ' + response.msg);
             }
-        }
+        },
+        complete: function (XHR, TS) { XHR = null }
     });
 
     setTimeout(() => {
