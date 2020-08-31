@@ -1,9 +1,5 @@
 .comments {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-family: 'Noto Sans SC', sans-serif;
-    font-family: 'Noto Sans HK', sans-serif;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Source Sans Pro', 'Noto Sans SC', 'Noto Sans HK', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
 }
 
 .cmt {
