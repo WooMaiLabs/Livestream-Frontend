@@ -8,12 +8,18 @@
     -webkit-text-stroke: 1px black;
 }
 
-.user-name {}
+.user-name {
+    white-space: nowrap;
+}
 
-.user-comment {}
+.user-comment {
+    width: auto;
+    overflow-wrap: anywhere;
+    white-space: normal;
+}
 
 .name-color {
-    color: #ccc
+    color: #ddd
 }
 
 .text-color {
