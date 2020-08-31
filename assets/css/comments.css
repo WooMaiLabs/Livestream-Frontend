@@ -1,12 +1,15 @@
-.cmt {
-    font-size: 30px;
-    font-weight: 700;
-    -webkit-text-stroke: 1px black;
+.comments {
+    font-family: 'Source Sans Pro', sans-serif;
     font-family: 'Noto Sans SC', sans-serif;
     font-family: 'Noto Sans HK', sans-serif;
     font-family: 'Noto Sans TC', sans-serif;
     font-family: 'Noto Sans JP', sans-serif;
-    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.cmt {
+    font-size: 30px;
+    font-weight: 700;
+    -webkit-text-stroke: 1px black;
 }
 
 .user-name {}
