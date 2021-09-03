@@ -181,14 +181,20 @@ function checkStatus() {
                     document.title = response.data.title + ' | Live Stream by WooMai Labs';
                     $('#title').text(response.data.title);
                 } else if (response.data.status == 'ended') {
-                    Swal.fire({
-                        icon: 'info',
-                        title: 'Info',
-                        text: 'Live Stream Ended',
-                        allowOutsideClick: false
-                    }).then(function () {
-                        window.location.reload();
-                    });
+                    if (!Swal.isVisible()) {
+                        Swal.fire({
+                            icon: 'info',
+                            title: 'Info',
+                            text: 'Live Stream Ended',
+                            allowOutsideClick: false
+                        }).then(function () {
+                            window.location.reload();
+                        });
+
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 30000)
+                    }
                 }
 
                 setTimeout(() => {
